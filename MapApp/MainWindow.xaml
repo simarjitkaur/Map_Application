@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MapApp"
+        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013" x:Class="MapApp.MainWindow"
+        mc:Ignorable="d"
+        Title="Population Map" Height="500" Width="800">
+    <Grid>
+
+        <esri:MapView x:Name="MyMapView" HorizontalAlignment="Stretch" GeoViewTapped="MyMapView_GeoViewTapped"  Margin="5,0,0,-0.333" VerticalAlignment="Stretch" WrapAroundMode="EnabledWhenSupported"/>
+        <StackPanel Orientation="Vertical"  Opacity=".5" HorizontalAlignment="Left" Background="Black">
+            <Label Content="World Population"  FontSize="26" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Select a basemap"  FontWeight="Bold"  FontSize="14" Foreground="White"/>
+            <ComboBox x:Name="BasemapCombobox" Margin="5,5,0,0" SelectionChanged="BasemapCombobox_SelectionChanged"></ComboBox>
+            <Label Content="Select a location" FontWeight="Bold" FontSize="14" Foreground="White"/>
+            <ListBox x:Name="GoTimeListbox" Margin="5,5,0,0" SelectionChanged="GoTimeListbox_SelectionChanged"></ListBox>
+
+            <Label x:Name="CountryTitleLabel" Content="Country"  FontSize="14" Height="30" FontWeight="Bold" Foreground="White"/>
+            <Label x:Name="CountryValueLabel"  FontSize="12" Height="30" Foreground="White"/>
+            <Label x:Name="RegionTitleLabel" Content="Region" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White"/>
+            <Label x:Name="RegionValueLabel" FontSize="12" HorizontalAlignment="Left" Height="30" Foreground="White"/>
+            <Label x:Name="PopulationTitleLabel" Content="2015 Population" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White"/>
+            <Label x:Name="PopulationValueLabel" FontSize="12"  HorizontalAlignment="Left" Height="30" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
